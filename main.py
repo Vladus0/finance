@@ -73,21 +73,21 @@ def main():
 
     while True: 
         print("Что бы вы хотели сделать?\n 1. Добавить траты\n 2. Показать кол-во оставшихся деняг\n 3. Обновить бюджет\n 4. Выйти")
-        choose = int(input("Ваш выбор 1/2/3/4: "))
-        if choose == 1:
+        choice = int(input("Ваш выбор 1/2/3/4: "))
+        if choice == 1:
             description = input("Введите описание траты (на что вы потратили деньги): ")
             amount = float(input("Введите кол-во потраченных деняг: "))
             budget = add_expense(budget, expenses, description, amount)
         
-        elif choose == 2:
+        elif choice == 2:
             show_budget_details(first_budget, budget, expenses, added_to_balance)
 
-        elif choose == 3:
+        elif choice == 3:
             update_budget = update_budget(budget)
             budget = update_budget[1]
             added_to_balance = update_budget[0]
 
-        elif choose == 4:
+        elif choice == 4:
             save_budget_details(first_budget, budget, expenses, filepath)
             break
 
